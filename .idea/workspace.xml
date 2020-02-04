@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="134e9969-a17f-494a-9546-45ca0754d91a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/projekat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +51,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -109,7 +102,7 @@
       <workItem from="1580489143721" duration="63777000" />
       <workItem from="1580631145193" duration="64541000" />
       <workItem from="1580761051474" duration="15048000" />
-      <workItem from="1580801599460" duration="3673000" />
+      <workItem from="1580801599460" duration="4278000" />
     </task>
     <task id="LOCAL-00001" summary="okey">
       <created>1580804914646</created>
@@ -137,10 +130,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1580804910405" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1580772939839">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1580806704887">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580772939839" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580806704887" />
     <state width="1259" height="168" key="GridCell.Tab.0.bottom" timestamp="1580804620121">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -157,6 +150,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1259" height="168" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580804620121" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1580806717716">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1580806717716" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580806371438">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1580806371438" />
     <state x="300" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580750607055">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
