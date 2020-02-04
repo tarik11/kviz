@@ -1,0 +1,148 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('projekat:server');
+var http = require('http');
+
+
+/* GET users listing. */
+var config = {
+  user: 'nnrekfcm',
+  database: 'nnrekfcm',
+  password: 'i_lGh76cXKoefSWV0vNvA6yCgv5pvotZ', //env var: PGPASSWORD
+  host: 'salt.db.elephantsql.com',
+  port: 5432,
+  max: 100,
+  idleTimeoutMillis: 30000
+};
+
+/*
+*
+* komentari na koji nisu odgovoreni cu sve na nulu pa gledat u ejs
+*
+* */
+
+var pg = require('pg');
+var pool = new pg.Pool(config);
+
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+var io = require('socket.io').listen(server,{
+  transports: ['websocket']
+});
+
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+io.on('connection', function (socket) {
+  console.log('connected');
+ socket.on('pridruzise', function (soba) {
+    console.log(soba);
+    socket.join(soba);
+ });
+ socket.on('pitanje', function (e) {
+
+   pool.connect(function (err, client, done) {
+     if (err) {
+       res.end('{"error" : "Error",' +
+           ' "status" : 500}');
+     }
+
+     client.query("insert into projekat.komentari(kviz_id, komentar, nickname, odgovoreno, lajk)" +
+         "values($1, $2, $3, 0, 0) returning *;", [e.soba, e.pitanje, e.nickname],
+         function (err, result) {
+           done();
+
+           if (err) {
+           } else {
+
+             io.to(e.soba).emit('dodajPitanje', result.rows[0]);
+           }
+         });
+   });
+
+ });
+});
+
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

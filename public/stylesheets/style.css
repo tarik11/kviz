@@ -1,0 +1,8 @@
+body {
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgb(51, 54, 62);
+}
+.container label{
+  color: whitesmoke;
+}

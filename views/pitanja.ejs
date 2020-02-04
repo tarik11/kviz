@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-4">
+        <%for(let i = 0; i < objekti.length; i++ ){%>
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Pitanje<%= i+1%> </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%=objekti[i].pitanje%></h5>
+                    <p class="card-text">Odgovor : <%=objekti[i].tekst%></p>
+                    <button onclick="brisi(<%=objekti[i].id%>)">BRIŠI</button>
+                </div>
+            </div>
+        <%}%>
+    </div>
+    <div class="col-sm-6">
+        <button type="button" class="btn btn-danger" onclick="myFunction()">Dodaj Pitanje</button>
+        <button type="button"  onclick="pokreni(<%=kviz_id%>, <%=nickname%>)" class="btn btn-primary">Pokreni kviz</button>
+
+        <form id        =  "uploadForm"
+              enctype   =  "multipart/form-data"
+              action    =  "/upload/<%=kviz_id%>"
+              method    =  "post"
+        ><div class="input-group input-group-sm mb-3">
+
+                <p style="color: whitesmoke; margin-top: 10px;" >Uploduj excel file sa pitanjima i odgovorima</p>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02" name="file">
+                        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <input type="submit" value="Upload" name="submit" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+            </div>
+        </form>
+        <div id="myDIV" style="display: none">
+
+        <form action="/kviz/<%=kviz_id%>" method="post">
+        <div class="container">
+            <label for="pitanje "><b>Pitanje</b></label>
+            <input type="text" placeholder="Pitanje" name="pitanje" required>
+            <br>
+            <button type="button" onclick="myFunction0()" class="btn btn-primary">Tekstualni odgovor</button>
+                <div id ="text" style="display: none">
+                    <label for="odgovor"><b>Odgovor</b></label>
+                    <input type="text" placeholder="Odgovor" name="odgovor">
+                </div>
+            <button type="button" onclick="myFunction1()" class="btn btn-primary">Visestruki odgovor</button>
+            <div id ="vise"  style="display: none">
+                <label for="odgovor"><b>Odgovor</b></label>
+                <input type="text" placeholder="Odgovor" name="odgovor">
+                <label for="odgovor"><b>Odgovor</b></label>
+                <input type="text" placeholder="Odgovor" name="odgovor">
+                <label for="odgovor"><b>Odgovor</b></label>
+                <input type="text" placeholder="Odgovor" name="odgovor">
+            </div>
+            <button type="button" onclick="myFunction2()" class="btn btn-primary">Da/ne odgovor</button>
+            <div id ="da/ne" style="display: none">
+                <label for="odgovor"><b>Odgovor</b></label>
+                <input type="text" placeholder="Odgovor" name="odgovor">
+            </div>
+            <br>
+            <button type="submit" onclick="myFunction2()" class="btn btn-success">Uploade</button>
+        </div>
+    </form></div>
+    </div>
+<br>
+<br>
+
+</div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction0() {
+        var x = document.getElementById("text");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction1() {
+        var x = document.getElementById("vise");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction2() {
+        var x = document.getElementById("da/ne");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function brisi(id) {
+        $.ajax({
+            url: 'brisi/'+id,
+            method: 'DELETE'
+        }).done(function(result){
+            location.reload();
+        });
+    }
+
+    function pokreni(id, nickname) {
+        $.ajax({
+            url: 'pokreni/' + id,
+            method: 'POST'
+        }).done(function(result){
+            window.location = 'http://localhost:3000/pokreni/' + id + '/' + nickname;
+        });
+
+    }
+
+</script>
+</body>
+</html>

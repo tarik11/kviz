@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+<div class="row">
+
+        <%for(let i = 0; i < objekti.length; i++ ){%>
+
+            <div class="card text-white bg-info mb-3 w-100 mr-3" style="max-width: 18rem;">
+                <div class="card-header">Pitanje<%= i+1%> </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%=objekti[i].pitanje%></h5>
+                    <p class="card-text">Odgovor : <%=objekti[i].tekst%></p>
+                 </div>
+                <%if(!objekti[i].postavljeno){%>
+                <button onclick="postavi(<%=objekti[i].id%>)">Postavi</button>
+                <%}else{%>
+                <button class="btn btn-danger">Postavljeno</button>
+                <%}%>
+            </div>
+        <%}%>
+</div>
+</div>
+<div class="row">
+    <button class="btn btn-danger" onclick="zavrsi(<%=kviz_id%>, <%=nickname%>)" style="margin: 5px;">Zavrsi kviz</button>
+    <button class="btn btn-success"  style="margin: 5px;"><a href="./rezultati/<%=kviz_id%>"  style="color: #f1f1f1;" target="_blank">Pogledaj rezultate</a></button>
+    <button class="btn btn-warning"  style="margin: 5px;"><a href="./pregled/<%=kviz_id%>"  style="color: black;" target="_blank">Pogledaj odgovore studenata</a></button>
+</div>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction0() {
+        var x = document.getElementById("text");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction1() {
+        var x = document.getElementById("vise");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function myFunction2() {
+        var x = document.getElementById("da/ne");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function brisi(id) {
+        $.ajax({
+            url: 'brisi/'+id,
+            method: 'DELETE'
+        }).done(function(result){
+            location.reload();
+        });
+    }
+    function postavi(id) {
+        $.ajax({
+            url: 'postavi/'+id,
+            method: 'POST'
+        }).done(function(result){
+            location.reload();
+        });
+    }
+
+    function zavrsi(id, nickname) {
+        $.ajax({
+            url: 'zavrsi/'+id,
+            method: 'POST'
+        }).done(function(result){
+            window.location = 'http://localhost:3000/kviz/' + id + '/'+nickname;
+        });
+    }
+
+
+</script>
+</body>
+</html>

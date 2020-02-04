@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="134e9969-a17f-494a-9546-45ca0754d91a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/projekat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="projekat" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Tarik\Desktop\Odabrana Poglavlja--Zadaca\projekat\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VbQBriG3M2stWemTjyr5k9BVio" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SOCKETS" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tarik\Desktop\Odabrana Poglavlja--Zadaca\projekat\views" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="134e9969-a17f-494a-9546-45ca0754d91a" name="Default Changelist" comment="" />
+      <created>1577519181532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577519181532</updated>
+      <workItem from="1577519182699" duration="8026000" />
+      <workItem from="1577564536015" duration="2817000" />
+      <workItem from="1577658612367" duration="22000" />
+      <workItem from="1577717832671" duration="7246000" />
+      <workItem from="1577821504387" duration="1250000" />
+      <workItem from="1577905002963" duration="5081000" />
+      <workItem from="1577981121338" duration="15658000" />
+      <workItem from="1578134125428" duration="2000" />
+      <workItem from="1578135234747" duration="8000" />
+      <workItem from="1578312571202" duration="492000" />
+      <workItem from="1578317899606" duration="9000" />
+      <workItem from="1578439499013" duration="601000" />
+      <workItem from="1578525691864" duration="93000" />
+      <workItem from="1578593602921" duration="19000" />
+      <workItem from="1578738149203" duration="5000" />
+      <workItem from="1578772721151" duration="29000" />
+      <workItem from="1578822531455" duration="80000" />
+      <workItem from="1580111296514" duration="198000" />
+      <workItem from="1580118808494" duration="27236000" />
+      <workItem from="1580489143721" duration="63777000" />
+      <workItem from="1580631145193" duration="64541000" />
+      <workItem from="1580761051474" duration="15048000" />
+      <workItem from="1580801599460" duration="3673000" />
+    </task>
+    <task id="LOCAL-00001" summary="okey">
+      <created>1580804914646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580804914646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="okey" />
+    <option name="LAST_COMMIT_MESSAGE" value="okey" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="397" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580724093586">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="397" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1580724093586" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1580804910405">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1580804910405" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1580772939839">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580772939839" />
+    <state width="1259" height="168" key="GridCell.Tab.0.bottom" timestamp="1580804620121">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="168" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580804620121" />
+    <state width="1259" height="168" key="GridCell.Tab.0.center" timestamp="1580804620121">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="168" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580804620121" />
+    <state width="1259" height="168" key="GridCell.Tab.0.left" timestamp="1580804620121">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="168" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580804620121" />
+    <state width="1259" height="168" key="GridCell.Tab.0.right" timestamp="1580804620121">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="168" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580804620121" />
+    <state x="300" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580750607055">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="300" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1580750607055" />
+    <state x="407" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1580804795922">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="407" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680@0.0.1280.680" timestamp="1580804795922" />
+    <state x="282" y="67" width="700" height="530" key="recent.locations.popup" timestamp="1580493439457">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="282" y="67" width="700" height="530" key="recent.locations.popup/0.0.1280.680@0.0.1280.680" timestamp="1580493439457" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1580593126198">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1580593126198" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580765146628">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580765146628" />
+  </component>
+</project>

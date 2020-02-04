@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+
+        <%for(let i = 0; i < objekti.length; i++ ){%>
+
+            <div class="card text-white bg-info mb-3 w-100 mr-3" style="max-width: 18rem;">
+                <div class="card-header">Pitanje<%= i+1%> </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%=objekti[i].pitanje%></h5>
+                    <p class="card-text">Odgovor : <%=objekti[i].odgovor%></p>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>
+<script>
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  </head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <body>
+  <ul class="nav nav-pills">
+    <%var gotovo  = 0%>
+    <%for(let i = 0; i < objekti.length; i++ ){%>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-info"><%=objekti[i].naziv%></button></a>
+      <div class="dropdown-menu">
+        <%if(objekti[i].prikaz == true){%>
+        <%for(let j = 0; j < kvizovi.length; j++ ){%>
+        <%if(objekti[i].id == kvizovi[j].predmet_id) {%>
+        <div class="dropdown-item"><b>Predavanje <%=gotovo+1%></b></div>
+        <a class="dropdown-item" href='./kviz/<%=kvizovi[j].id%>/<%=kvizovi[j].predavac_id%>'><%=kvizovi[j].ime%></a>
+        <a class="dropdown-item" href='./kviz/<%=kvizovi[j].id%>'>Pitanja</a>
+        <a class="dropdown-item">Code : <%=kvizovi[j].id%></a>
+        <div class="dropdown-divider"></div>
+        <%gotovo++%>
+        <%}%>
+        <%}%>
+        <%}%>
+        <%gotovo = 0;%>
+        <%}%>
+      </div>
+
+
+    </li>
+</ul>
+
+<div class="row" style="margin-top:50px">
+  <div class="col-sm-6">
+  <form action="/predmet/<%=predavac_id%>" method="post">
+    <div class="form-group col-sm-8">
+      <label for="formGroupExampleInput" style="color: whitesmoke;">Naziv predmeta</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nickname" name="predmet" required>
+      <button type="submit" class="btn btn-primary">Create Predmet</button>
+    </div>
+  </form>
+  </div>
+  <div class="col-sm-6">
+  <form action="/kreirajKviz/<%=predavac_id%>" method="post">
+  <div class="row">
+    <div class = "col-sm-2">
+    </div>
+    <div class="form-group col-sm-8">
+      <label for="formGroupExampleInput" style="color: whitesmoke;">Naziv kviza</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nickname" name="name" required>
+      <label class="mr-sm-2" for="inlineFormCustomSelect" style="color: whitesmoke;">Predmet :</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="predmet" required>
+        <%for(let i = 0; i < objekti.length;i++){%>
+          <option value="<%=objekti[i].id%>"><%=objekti[i].naziv%></option>
+        <%}%>
+      </select>
+   <button type="submit" class="btn btn-primary">Create kviz</button>
+    </div>
+    <div class = "col-sm-2"></div>
+  </div>
+  </form>
+  </div>
+</div>
+  <script>
+
+    function pitanja(id1, id2) {
+      $.ajax({
+        url: '/kviz/'+id1 +'/' + id2,
+        method: 'GET'
+      }).done(function(result){
+        window.location = 'kviz/' + id1 +'/' + id2
+      });
+    }
+
+  </script>
+  </body>
+</html>

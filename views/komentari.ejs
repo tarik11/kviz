@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+
+</head>
+<body>
+<%var odg = []%>
+
+<%for(let i = 0; i < objecti.length; i++){%>
+    <%if(objecti[i].odgovoreno === 0){%>
+    <div class="row">
+        <div class = "col-sm-4"></div>
+        <div class="card col-sm-4" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%=objecti[i].nickname%></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pitanje : </h6>
+            <p class="card-text"><%=objecti[i].komentar%></p>
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-3"><p class="card-text"><%=objecti[i].lajk%></p>
+                </div>
+                <div class="col-sm-3"><p class="card-text"> <button type="button" class="btn btn-info" onclick="lajk(<%=objecti[i].id%>, <%=objecti[i].lajk%>)">Lajk</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class = "col-sm-4"></div>
+    </div>
+<%}else{odg.push(objecti[i])}%>
+<%}%>
+
+<%for(let i = 0; i < odg.length; i++){%>
+<div class="row">
+    <div class = "col-sm-4"></div>
+    <div class="card col-sm-4 bg-danger" style="width: 20rem;" style="font-size: 1px;" style="background: mistyrose;">
+        <div class="card-body" style="background: mistyrose;">
+            <h5 class="card-title"><%=objecti[i].nickname%></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pitanje : </h6>
+            <p class="card-text"><%=objecti[i].komentar%> : Odgovoreno</p>
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-3"><p class="card-text"><%=objecti[i].lajk%></p>
+                </div>
+                <div class="col-sm-3"><p class="card-text"> <button type="button" class="btn btn-info">Lajk</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-sm-4"></div>
+</div>
+<%}%>
+
+<form action="./users/<%=nickname%>/<%=kviz_id%>" method="post">
+<div class="row">
+    <div class = "col-sm-3"></div>
+    <div class="form-group col-sm-6">
+        <label for="exampleFormControlTextarea1">Postavi pitanje</label>
+        <input type="textarea" class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize: none;" name="komentar" required>
+    </div>
+    <div class = "col-sm-2">
+        <button type="submit" class="btn btn-primary" style="margin-top: 30px;">Post</button>
+    </div>
+</div>
+</form>
+
+<script>
+    function lajk(id, lajk) {
+        $.ajax({
+            url: 'users/lajk/'+id +'/'+lajk,
+            method: 'POST'
+        }).done(function(result){
+            location.reload();
+
+        });
+    }
+
+</script>
+
+</body>
+</html>

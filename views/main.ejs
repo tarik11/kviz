@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<br>
+<br>
+<form action="/" method="post">
+    <div class="row">
+        <div class = "col-sm-4"></div>
+        <div class="form-group col-sm-4" style="color: whitesmoke;">
+            <label for="formGroupExampleInput">Username</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Username" name="uname" required>
+            <label for="formGroupExampleInput">Password</label>
+            <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Enter Username"  name="psw" required>
+            <br>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+        <div class = "col-sm-4"></div>
+    </div>
+</form>
+<br>
+<div class="row">
+    <div class = "col-sm-5"></div>
+    <div class="col-sm-3"><a href="/users">I am a student</a></div>
+    <div class = "col-sm-4"></div>
+
+</div>
+</body>
+</html>
